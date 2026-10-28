@@ -1,16 +1,319 @@
 ---
+import Layout from '../layouts/Layout.astro';
+
+const skills = {
+	'Gestão & Estratégia': ['DHO', 'Business Partner', 'Comunicação', 'Scrum'],
+	'Recrutamento & Tech': ['Tech Recruiter', 'Gupy', 'Pipefy'],
+	'Dados & Ferramentas': ['Power BI', 'Metabase', 'Office avançado', 'Tangerino', 'Cockify'],
+	'Design & Colaboração': ['Notion', 'Canva', 'Figma', 'Miro'],
+};
+
+const clients = [
+	'ZRP', 'Multiplan', 'Estadão', 'Apisul', 'BrasilCap', 'Frente Corretora',
+	'Descomplica', 'SAS', 'LAMSA', 'Unidas', 'MAG Seguros', 'Torqi',
+	'EcoRodovias', 'Brasil Prev', 'Danone', 'Infinity Doctors', 'Uqbar',
+	'Ipiranga', 'Cultura Inglesa', 'BitCapital', 'Mongeral Aegon', 'Light',
+	'Petrobras', 'Enel', 'Creditas', 'Eletrobras', 'Neoenergia', 'BRK',
+	'Energisa', 'Faurecia', 'BAT', 'SHV Energy', 'Líber', 'nap.mineração',
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Karen Erlach | Consultora de RH & Tech Recruiter">
+
+	<!-- Hero Section -->
+	<section id="inicio" class="hero">
+		<!-- Background layers -->
+		<div class="hero-bg-grid" aria-hidden="true"></div>
+		<div class="hero-glow-orb" aria-hidden="true"></div>
+		<div class="hero-glow-orb-2" aria-hidden="true"></div>
+
+		<div class="hero-container">
+			<!-- Left: Content -->
+			<div class="hero-col-text">
+				<div class="hero-content">
+					<!-- Badge -->
+					<div class="animate-fade-up inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50/80 px-4 py-1.5 text-sm font-semibold text-brand-800 backdrop-blur-sm mb-6">
+						<span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+						Consultora de RH & Tech Recruiter
+					</div>
+
+					<!-- Heading -->
+					<h1 class="animate-fade-up animate-delay-100 font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-warm-900 leading-tight">
+						Conectando pessoas <span class="text-brand-700">e oportunidades.</span>
+					</h1>
+
+					<!-- Description -->
+					<p class="animate-fade-up animate-delay-200 mt-6 text-lg md:text-xl text-warm-600 max-w-md leading-relaxed">
+						+8 anos transformando culturas organizacionais, fortalecendo marcas empregadoras e retendo talentos alinhados à estratégia do negócio.
+					</p>
+
+					<!-- CTA Buttons -->
+					<div class="animate-fade-up animate-delay-300 mt-10 flex flex-wrap gap-4">
+						<a
+							href="#contato"
+							class="inline-flex items-center gap-2 rounded-full bg-brand-700 px-7 py-3.5 text-sm font-semibold text-white hover:bg-brand-800 transition-colors shadow-lg shadow-brand-700/25"
+						>
+							Entre em contato
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+							</svg>
+						</a>
+						<a
+							href="https://bit.ly/karen-erlach"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-flex items-center gap-2 rounded-full border border-warm-300 bg-white/80 backdrop-blur-sm px-7 py-3.5 text-sm font-semibold text-warm-700 hover:border-brand-400 hover:text-brand-700 transition-colors"
+						>
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+							</svg>
+							LinkedIn
+						</a>
+					</div>
+
+					<!-- Skill Tags -->
+					<div class="animate-fade-up animate-delay-400 mt-8 flex flex-wrap gap-2">
+						{['Tech Recruiter', 'Business Partner', 'DHO', 'Marca Empregadora', 'Gestão de Pessoas', 'Cultura Organizacional'].map((tag) => (
+							<span class="inline-block rounded-full bg-warm-100/80 backdrop-blur-sm px-3 py-1 text-xs font-medium text-warm-600">
+								{tag}
+							</span>
+						))}
+					</div>
+				</div>
+			</div>
+
+			<!-- Right: Photo -->
+			<div class="hero-col-photo">
+				<div class="hero-photo-wrapper animate-fade-in animate-delay-200">
+					<!-- Decorative shapes behind photo -->
+					<div class="hero-photo-decor-ring" aria-hidden="true"></div>
+					<div class="hero-photo-decor-blob" aria-hidden="true"></div>
+					<div class="hero-photo-frame">
+						<img
+							src="/profile.jpeg"
+							alt="Karen Erlach — Consultora de RH e Tech Recruiter"
+							width="800"
+							height="900"
+						/>
+					</div>
+					<!-- Stats floating over photo (desktop) -->
+					<div class="hero-photo-stats animate-fade-up animate-delay-500">
+						<div class="text-center">
+							<span class="block text-xl font-bold text-brand-700">+8</span>
+							<span class="block text-[0.65rem] text-warm-500 leading-tight mt-0.5">anos de<br/>experiência</span>
+						</div>
+						<span class="w-px h-8 bg-warm-200" aria-hidden="true"></span>
+						<div class="text-center">
+							<span class="block text-xl font-bold text-brand-700">+34</span>
+							<span class="block text-[0.65rem] text-warm-500 leading-tight mt-0.5">clientes<br/>atendidos</span>
+						</div>
+						<span class="w-px h-8 bg-warm-200" aria-hidden="true"></span>
+						<div class="text-center">
+							<span class="block text-xl font-bold text-brand-700">+15</span>
+							<span class="block text-[0.65rem] text-warm-500 leading-tight mt-0.5">ferramentas<br/>dominadas</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Scroll indicator -->
+		<div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 animate-fade-in animate-delay-500">
+			<a href="#sobre" class="flex flex-col items-center gap-2 text-warm-400 hover:text-brand-600 transition-colors">
+				<span class="text-xs font-medium uppercase tracking-widest">Scroll</span>
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+				</svg>
+			</a>
+		</div>
+	</section>
+
+	<!-- Divider -->
+	<div class="section-divider mx-auto max-w-6xl"></div>
+
+	<!-- About Section -->
+	<section id="sobre" class="py-24 md:py-32 bg-white">
+		<div class="mx-auto max-w-6xl px-6">
+			<div class="grid md:grid-cols-12 gap-12 md:gap-16 items-start">
+				<div class="md:col-span-4 reveal-left">
+					<p class="text-sm font-semibold uppercase tracking-widest text-brand-700 mb-2">Sobre mim</p>
+					<h2 class="font-serif text-3xl md:text-4xl font-bold text-warm-900">
+						Quem sou eu
+					</h2>
+				</div>
+				<div class="md:col-span-8 space-y-6 reveal-right">
+					<p class="text-lg leading-relaxed text-warm-600">
+						Com formação em <strong class="text-warm-800">Pedagogia, Recursos Humanos</strong> e <strong class="text-warm-800">MBA em Gestão de Pessoas</strong>, sou uma profissional apaixonada por conectar pessoas e oportunidades.
+					</p>
+					<p class="text-lg leading-relaxed text-warm-600">
+						Meu objetivo é criar e promover um ambiente de trabalho colaborativo, diversificado e inovador, totalmente alinhado à cultura e aos valores das organizações.
+					</p>
+					<p class="text-lg leading-relaxed text-warm-600">
+						Com mais de <strong class="text-warm-800">oito anos de experiência como consultora</strong>, venho auxiliando empresas a engajar seus colaboradores, fortalecer sua marca empregadora e reter talentos, sempre em sintonia com a estratégia do negócio.
+					</p>
+
+					<!-- Stats -->
+					<div class="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-8 border-t border-warm-200 stagger">
+						<div>
+							<p class="text-3xl font-bold text-brand-700">8+</p>
+							<p class="text-sm text-warm-500 mt-1">Anos de experiência</p>
+						</div>
+						<div>
+							<p class="text-3xl font-bold text-brand-700">34+</p>
+							<p class="text-sm text-warm-500 mt-1">Clientes atendidos</p>
+						</div>
+						<div>
+							<p class="text-3xl font-bold text-brand-700">15+</p>
+							<p class="text-sm text-warm-500 mt-1">Ferramentas dominadas</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Quote Section -->
+	<section class="py-20 bg-brand-800 relative overflow-hidden">
+		<div class="absolute inset-0 opacity-10">
+			<div class="absolute top-0 left-1/4 w-64 h-64 bg-brand-400 rounded-full blur-3xl"></div>
+			<div class="absolute bottom-0 right-1/4 w-48 h-48 bg-brand-300 rounded-full blur-3xl"></div>
+		</div>
+		<div class="relative mx-auto max-w-4xl px-6 text-center reveal-scale">
+			<svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-6 text-brand-400/50" fill="currentColor" viewBox="0 0 24 24">
+				<path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+			</svg>
+			<blockquote class="font-serif text-2xl md:text-3xl text-white/95 leading-relaxed italic">
+				O maior ativo de uma empresa são as pessoas.
+			</blockquote>
+			<cite class="block mt-6 text-brand-300 text-sm font-medium not-italic">
+				Ken Blanchard
+			</cite>
+		</div>
+	</section>
+
+	<!-- Divider -->
+	<div class="section-divider mx-auto max-w-6xl"></div>
+
+	<!-- Skills Section -->
+	<section id="habilidades" class="py-24 md:py-32 bg-warm-50">
+		<div class="mx-auto max-w-6xl px-6">
+			<div class="text-center mb-16 reveal-blur">
+				<p class="text-sm font-semibold uppercase tracking-widest text-brand-700 mb-2">Competências</p>
+				<h2 class="font-serif text-3xl md:text-4xl font-bold text-warm-900">
+					Habilidades & Ferramentas
+				</h2>
+			</div>
+
+			<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 stagger">
+				{Object.entries(skills).map(([category, items]) => (
+					<div class="bg-white rounded-2xl p-6 shadow-sm border border-warm-100 hover:shadow-md hover:border-brand-200 transition-all duration-300">
+						<h3 class="font-semibold text-warm-900 mb-4 text-sm uppercase tracking-wide">
+							{category}
+						</h3>
+						<div class="flex flex-wrap gap-2">
+							{items.map((skill: string) => (
+								<span class="inline-block rounded-full bg-brand-50 px-3 py-1.5 text-sm text-brand-800 font-medium">
+									{skill}
+								</span>
+							))}
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Divider -->
+	<div class="section-divider mx-auto max-w-6xl"></div>
+
+	<!-- Clients Section -->
+	<section id="clientes" class="py-24 md:py-32 bg-white">
+		<div class="mx-auto max-w-6xl px-6">
+			<div class="text-center mb-16 reveal-blur">
+				<p class="text-sm font-semibold uppercase tracking-widest text-brand-700 mb-2">Portfolio</p>
+				<h2 class="font-serif text-3xl md:text-4xl font-bold text-warm-900">
+					Clientes atendidos
+				</h2>
+				<p class="mt-4 text-warm-500 max-w-xl mx-auto">
+					Empresas de diversos setores que confiaram em meu trabalho para transformar suas equipes e processos de RH.
+				</p>
+			</div>
+
+			<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 stagger-blur">
+				{clients.map((client) => (
+					<div class="group flex items-center justify-center rounded-xl border border-warm-100 bg-warm-50/50 px-4 py-5 hover:border-brand-300 hover:bg-brand-50 transition-all duration-300">
+						<span class="text-sm font-semibold text-warm-500 group-hover:text-brand-700 transition-colors text-center">
+							{client}
+						</span>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Contact Section -->
+	<section id="contato" class="py-24 md:py-32 bg-warm-900 relative overflow-hidden">
+		<div class="absolute inset-0">
+			<div class="absolute top-1/2 left-0 w-96 h-96 bg-brand-800/20 rounded-full blur-3xl -translate-y-1/2"></div>
+			<div class="absolute bottom-0 right-0 w-72 h-72 bg-brand-700/10 rounded-full blur-3xl"></div>
+		</div>
+
+		<div class="relative mx-auto max-w-6xl px-6">
+			<div class="grid md:grid-cols-12 gap-12 md:gap-16">
+				<div class="md:col-span-5 reveal-left">
+					<p class="text-sm font-semibold uppercase tracking-widest text-brand-400 mb-2">Contato</p>
+					<h2 class="font-serif text-3xl md:text-4xl font-bold text-white">
+						Vamos conversar?
+					</h2>
+					<p class="mt-4 text-warm-400 leading-relaxed">
+						Estou disponível para novos projetos e oportunidades de consultoria. Entre em contato para saber como posso ajudar sua empresa.
+					</p>
+				</div>
+
+				<div class="md:col-span-7">
+					<div class="grid sm:grid-cols-2 gap-6 stagger">
+						<!-- Phone -->
+						<a href="https://wa.me/5521971849787" target="_blank" rel="noopener noreferrer" class="group flex items-start gap-4 rounded-2xl border border-warm-700/50 bg-warm-800/50 p-6 hover:border-brand-600 hover:bg-warm-800 transition-all duration-300">
+							<div class="flex-shrink-0 flex items-center justify-center w-11 h-11 rounded-full bg-brand-700/20 text-brand-400 group-hover:bg-brand-700/30 transition-colors">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+									<path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+								</svg>
+							</div>
+							<div>
+								<p class="text-xs font-medium uppercase tracking-wider text-warm-500 mb-1">Telefone</p>
+								<p class="text-white font-medium">(21) 97184-9787</p>
+							</div>
+						</a>
+
+						<!-- Email -->
+						<a href="mailto:karenerlach@gmail.com" class="group flex items-start gap-4 rounded-2xl border border-warm-700/50 bg-warm-800/50 p-6 hover:border-brand-600 hover:bg-warm-800 transition-all duration-300">
+							<div class="flex-shrink-0 flex items-center justify-center w-11 h-11 rounded-full bg-brand-700/20 text-brand-400 group-hover:bg-brand-700/30 transition-colors">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+									<path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+								</svg>
+							</div>
+							<div>
+								<p class="text-xs font-medium uppercase tracking-wider text-warm-500 mb-1">Email</p>
+								<p class="text-white font-medium">karenerlach@gmail.com</p>
+							</div>
+						</a>
+
+						<!-- LinkedIn -->
+						<a href="https://bit.ly/karen-erlach" target="_blank" rel="noopener noreferrer" class="group flex items-start gap-4 rounded-2xl border border-warm-700/50 bg-warm-800/50 p-6 hover:border-brand-600 hover:bg-warm-800 transition-all duration-300 sm:col-span-2">
+							<div class="flex-shrink-0 flex items-center justify-center w-11 h-11 rounded-full bg-brand-700/20 text-brand-400 group-hover:bg-brand-700/30 transition-colors">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+									<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+								</svg>
+							</div>
+							<div>
+								<p class="text-xs font-medium uppercase tracking-wider text-warm-500 mb-1">LinkedIn</p>
+								<p class="text-white font-medium">linkedin.com/in/karen-erlach</p>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</Layout>
